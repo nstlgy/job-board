@@ -2,6 +2,7 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
+  SidebarGroup,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -10,6 +11,8 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { AppSidebarClient } from "./_AppSidebarClient";
+import Link from "next/link";
+import { LogInIcon } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -20,7 +23,20 @@ export default function HomePage() {
             <SidebarTrigger />
             <span className="text-xl text-nowrap">WDS JOBS</span>
           </SidebarHeader>
-          <SidebarContent></SidebarContent>
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <Link href="/sign-in">
+                      <LogInIcon />
+                      <span>Log In</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          </SidebarContent>
           <SidebarFooter>
             <SidebarMenu>
               <SidebarMenuItem>
